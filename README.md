@@ -14,5 +14,6 @@
 - Gear items have a border based on rarity
 - Jewels have a border based on rarity (can be changed to show jewel color instead)
 - Trinkets have a border based their color
-- Charms have a border based on their tier
+- Inscription items have a border based on room type
+
   
