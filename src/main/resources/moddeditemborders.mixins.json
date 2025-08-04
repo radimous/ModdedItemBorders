@@ -5,20 +5,21 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "moddeditemborders.refmap.json",
   "plugin": "com.radimous.moddeditemborders.mixin.ModdedItemBordersMixinPlugin",
-  "mixins": [],
+  "mixins": [
+  ],
   "client": [
-    "the_vault.MixinItemBordersConfig",
+    "ItemBordersInvoker",
+    "MixinItemBorders",
     "MixinItemRenderer",
     "ae2.MixinAEStackRendering",
     "cyclopscore.MixinRenderItemExtendedSlotCount",
-    "sophisticatedcore.MixinStorageScreenBase",
-    "tomsstorage.MixinGuiStorageTerminalBase",
-    "ItemBordersInvoker",
-    "MixinItemBorders",
     "mekanism.MixinGuiUtils",
     "refinedstorage.MixinItemGridStack",
     "rftoolsstorage.MixinRenderHelper",
-    "ssn.MixinItemSlotNetwork"
+    "sophisticatedcore.MixinStorageScreenBase",
+    "ssn.MixinItemSlotNetwork",
+    "the_vault.MixinItemBordersConfig",
+    "tomsstorage.MixinGuiStorageTerminalBase"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -10,7 +10,9 @@ import iskallia.vault.gear.item.VaultGearItem;
 import iskallia.vault.init.ModConfigs;
 import iskallia.vault.init.ModGearAttributes;
 import iskallia.vault.init.ModItems;
+import iskallia.vault.item.InscriptionItem;
 import iskallia.vault.item.gear.CharmItem;
+import iskallia.vault.item.gear.VaultCharmItem;
 import iskallia.vault.item.tool.JewelItem;
 import me.fallenbreath.conditionalmixin.api.annotation.Condition;
 import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
@@ -67,9 +69,15 @@ public class MixinItemBordersConfig {
             data.getFirstValue(ModGearAttributes.TRINKET_EFFECT).ifPresent(effect ->
                 cir.setReturnValue(effect.getTrinketConfig().getComponentColor())
             );
+            return;
         }
         if (item instanceof CharmItem charmItem) {
             cir.setReturnValue(TextColor.fromRgb(charmItem.getColor()));
+            return;
+        }
+        if (item instanceof InscriptionItem) {
+            cir.setReturnValue(TextColor.fromRgb(InscriptionItem.getColor(itemStack)));
+            return;
         }
     }
 }
